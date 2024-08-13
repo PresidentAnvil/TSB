@@ -20,7 +20,7 @@ getgenv().loop = coroutine.create(function()
 
         for i,v in pairs(animate:GetPlayingAnimationTracks()) do
             if ifind(animations, v.Animation.AnimationId) then
-                wait(animations[v.Animation.AnimationId])
+                task.wait(animations[v.Animation.AnimationId])
                 dothetech=true
                 lastcf = character.HumanoidRootPart.CFrame
                 v.Stopped:Connect(function()
@@ -32,11 +32,11 @@ getgenv().loop = coroutine.create(function()
                     character.HumanoidRootPart.AssemblyLinearVelocity = Vector3.zero
                     character.HumanoidRootPart.AssemblyAngularVelocity = Vector3.zero
                 until not dothetech
-                wait(0.1)
+                task.wait(0.1)
                 character.HumanoidRootPart.CFrame=lastcf
                 workspace.Camera.CameraType = Enum.CameraType.Custom
                 workspace.Camera.CameraSubject = character.Humanoid
-                wait(1)
+                task.wait(1)
             end
         end
     end
