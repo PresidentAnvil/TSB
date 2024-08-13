@@ -3,7 +3,6 @@ getgenv().FolderName = "the hackerest gui"
 workspace.FallenPartsDestroyHeight = 0/0
 local library = loadstring(game:HttpGet('https://raw.githubusercontent.com/Awakenchan/jan/main/JanModifiedSource'))()
 local fl = loadstring(game:HttpGet("https://raw.githubusercontent.com/Coolmandfgfgdvcgfg/criminology/main/fly_fork"))()
-local p = game:GetService("Players").LocalPlayer
 local LegitTab = library:AddTab("main")
 local LegitColunm1 = LegitTab:AddColumn()
 local LegitColunm2 = LegitTab:AddColumn() 
@@ -21,6 +20,7 @@ char:AddToggle{
             return
         end
         walkspeedthing = game:GetService"RunService".PostSimulation:Connect(function()
+	    local p = game:GetService("Players").LocalPlayer
             p.Character.Humanoid.WalkSpeed = ws
         end)
     end
