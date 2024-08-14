@@ -1,3 +1,9 @@
+workspace.FallenPartsDestroyHeight = 0/0
+
+if getgenv().loop then
+    coroutine.close(getgenv().loop)
+    getgenv().loop = nil
+end
 local animations = {
     ["rbxassetid://12273188754"]=1.31,
     ["rbxassetid://12296113986"]=1.2,
@@ -28,7 +34,7 @@ getgenv().loop = coroutine.create(function()
                 end)
                 repeat wait()
                     workspace.Camera.CameraType = Enum.CameraType.Scriptable
-                    character.HumanoidRootPart.CFrame = CFrame.new(9e9,-9e9,9e9)
+                    character.HumanoidRootPart.CFrame = CFrame.new(0,-1000,0)
                     character.HumanoidRootPart.AssemblyLinearVelocity = Vector3.zero
                     character.HumanoidRootPart.AssemblyAngularVelocity = Vector3.zero
                 until not dothetech
