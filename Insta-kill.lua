@@ -34,7 +34,7 @@ getgenv().loop = coroutine.create(function()
                 end)
                 repeat wait()
                     workspace.Camera.CameraType = Enum.CameraType.Scriptable
-                    character.HumanoidRootPart.CFrame = CFrame.new(0,-1000,0)
+                    character.HumanoidRootPart.CFrame = CFrame.new(0,-300,0)
                     character.HumanoidRootPart.AssemblyLinearVelocity = Vector3.zero
                     character.HumanoidRootPart.AssemblyAngularVelocity = Vector3.zero
                 until not dothetech
